@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="image/doughnut.png">
+    <title>結帳</title>
+    <link rel="stylesheet" href="assest/check.css">
+    <link rel="stylesheet" href="assest/col.css">
+</head>
+<body>
+    <!--header-->
+    <header>
+        <div class="headerleft">
+        <a href="index.html"><img src="image/donut.png" width="50" height="50"></a>
+            <div class="search">
+                <img src="image/search.png" width="24" height="24"> 
+                <input class="search_input" placeholder="Search"></input>
+            </div>
+        </div>
+
+        <div class="headerright">
+            <a href="allproduct.html">ALL PRODUCTS</a>
+            <a href="hot.html">HOT!!</a> 
+            <a href="about.html">ABOUT US</a> 
+            <a href="profile.html">MEMBER</a> 
+            <!--events / 廣告-->
+            <button id="event">EVENTS</button>
+            <dialog id="eve">
+            <p class="dragon">    
+            慶祝端午節&emsp;買5送2<br>
+            抹茶甜甜圈&emsp;特賣$30<br><br>
+            <a href="allproduct.html">
+            <img style="border-radius: 50%;" src="image/matcha.png" width="246.75" height="181.875">
+            </a>
+            <br><br>
+            <button id="close">X</button></p>
+            </dialog>
+            <!--events / 廣告-->
+            <a href="login.html"><img src="image/user.png" width="24" height="24"></a> <!--登入-->
+
+        <div class="clearfix"></div>
+    </header>
+    <!--header-->
+
+    <!--結帳畫面-->
+    <div class="check-center">
+    <div class="menu">
+        <h2>結帳</h2>
+        <div class="table-center">
+        <table>
+            <tr>
+                <td class="first-none"></td>
+                <td class="first-name">商品名稱</td>
+                <td class="first-count">數量</td>
+            </tr>
+            
+            <tr>
+                <td><img src="image/123.jpg"></td>
+                <td class="items">蜜糖魔法圈</td>
+                <td class="items">3</td>
+            </tr>
+            <!--
+            <tr>
+                <td><img src="image/456.jpg"></td>
+                <td class="items">豆香魔法圈</td>
+                <td class="items">3</td>
+            </tr>
+            -->
+            <tr>
+                <td colspan="3" class="total">TOTAL：$ 90</td>
+            </tr>
+
+        <!--付款方式-->
+            <tr>
+                <td colspan="3" id="radio-btn">
+                    <label><input type="radio" name="payment" value="onlinepay" checked="checked">
+                        <span class="round button">線上支付</span> 
+                    </label>
+                    <label><input type="radio" name="payment" value="cash">
+                        <span class="round button">貨到付款</span>
+                    </label>
+                    <label><input type="radio" name="payment" value="linepay">
+                        <span class="round button">LINEpay</span> 
+                    </label>
+                </td>
+            </tr>
+        </table>
+        </div>
+        <br><br>
+        <!--結帳按鈕-->
+        <div class="btn-center">
+            <div class="goshopping">
+                <input type="button" name="goshopping" value="繼續購物" onclick="location.href='allproduct.html'">
+            </div>
+            <div class="checkout">
+                <input type="button" name="checkout" value="結&emsp;&emsp;帳" onclick="checkout()">
+            </div>
+        </div>
+    </div>
+    </div> 
+    <!--結帳畫面-->
+   
+    <script>
+    //購物完成彈跳視窗
+        function checkout() {
+        alert("購買完成囉😽\n期待您的下次光臨～");
+        window.location.href="index.html";
+    }
+    //廣告
+        let btn=document.querySelector("#event");
+        let eve=document.querySelector("#eve");
+        let close=document.querySelector("#close");
+        btn.addEventListener("click", function(){
+        eve.showModal();
+        })
+        close.addEventListener("click", function(){
+        eve.close();
+        })
+    //廣告
+    </script>
+</body>
+</html>
